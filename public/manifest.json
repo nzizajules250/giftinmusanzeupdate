@@ -1,0 +1,66 @@
+{
+  "name": "GiftInn Musanze",
+  "short_name": "GiftInn",
+  "description": "Luxury hotel booking and guest experience platform for GiftInn Musanze.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#faf8f3",
+  "theme_color": "#1a1410",
+  "icons": [
+    {
+      "src": "/icons/giftinn-logo.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/giftinn-logo.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Book Now",
+      "short_name": "Booking",
+      "description": "Open the booking page quickly.",
+      "url": "/booking",
+      "icons": [
+        {
+          "src": "/icons/giftinn-logo.svg",
+          "sizes": "192x192",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Rooms & Suites",
+      "short_name": "Rooms",
+      "description": "View room categories and details.",
+      "url": "/rooms",
+      "icons": [
+        {
+          "src": "/icons/giftinn-logo.svg",
+          "sizes": "192x192",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Live Notifications",
+      "short_name": "Alerts",
+      "description": "Open GiftInn and review live updates.",
+      "url": "/?focus=notifications",
+      "icons": [
+        {
+          "src": "/icons/giftinn-logo.svg",
+          "sizes": "192x192",
+          "type": "image/svg+xml"
+        }
+      ]
+    }
+  ]
+}
+
