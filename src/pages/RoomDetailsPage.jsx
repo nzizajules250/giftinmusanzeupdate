@@ -30,6 +30,88 @@ const css = `
     overflow-x: hidden;
   }
 
+  [data-theme="dark"] .rd-wrap {
+    background: #0f0c08;
+    color: #f3eee4;
+  }
+
+  [data-theme="dark"] .rd-breadcrumb {
+    color: #9a8a7a;
+  }
+
+  [data-theme="dark"] .rd-breadcrumb-current {
+    color: #f3eee4;
+  }
+
+  [data-theme="dark"] .rd-title,
+  [data-theme="dark"] .rd-price,
+  [data-theme="dark"] .rd-spec-value,
+  [data-theme="dark"] .rd-amenity {
+    color: #f3eee4;
+  }
+
+  [data-theme="dark"] .rd-title-block,
+  [data-theme="dark"] .rd-body,
+  [data-theme="dark"] .rd-related {
+    border-bottom-color: #2b241d;
+    border-right-color: #2b241d;
+  }
+
+  [data-theme="dark"] .rd-gallery {
+    border-right-color: #2b241d;
+    border-bottom-color: #2b241d;
+  }
+
+  [data-theme="dark"] .rd-specs {
+    background: #2b241d;
+    border-color: #2b241d;
+  }
+
+  [data-theme="dark"] .rd-spec {
+    background: #17130f;
+  }
+
+  [data-theme="dark"] .rd-desc,
+  [data-theme="dark"] .rd-price-label,
+  [data-theme="dark"] .rd-price-sub,
+  [data-theme="dark"] .rd-spec-label,
+  [data-theme="dark"] .rd-related-link {
+    color: #9a8a7a;
+  }
+
+  [data-theme="dark"] .rd-wa-btn {
+    color: #f3eee4;
+    border-color: #2b241d;
+  }
+
+  [data-theme="dark"] .rd-wa-btn:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  [data-theme="dark"] .rd-input,
+  [data-theme="dark"] .rd-select {
+    background: #17130f;
+    color: #f3eee4;
+    border-color: #2b241d;
+  }
+
+  [data-theme="dark"] .rd-modal {
+    background: #17130f;
+  }
+
+  [data-theme="dark"] .rd-input::placeholder {
+    color: #6b5a4d;
+  }
+
+  [data-theme="dark"] .rd-trust {
+    color: #6b5a4d;
+  }
+
+  [data-theme="dark"] .rd-related-title {
+    color: #f3eee4;
+  }
+
   /* ════════════════════════════
      BREADCRUMB
   ════════════════════════════ */
