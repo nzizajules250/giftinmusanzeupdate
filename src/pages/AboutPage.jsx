@@ -51,6 +51,10 @@ const css = `
     overflow-x: hidden;
   }
 
+  [data-theme="dark"] .ab-wrap {
+    background: #0f0c08;
+  }
+
   /* ════════════════════════════
      HERO
   ════════════════════════════ */
@@ -99,6 +103,10 @@ const css = `
     justify-content: center;
     padding: 80px 6vw 80px 5vw;
     position: relative;
+  }
+
+  [data-theme="dark"] .ab-hero-content {
+    background: #1a1410;
   }
   .ab-hero-content::before {
     content: '';
@@ -411,6 +419,11 @@ const css = `
     padding: 100px 6vw;
     background: var(--ivory);
     border-bottom: 1px solid var(--sand);
+  }
+
+  [data-theme="dark"] .ab-team {
+    background: #0f0c08;
+    border-bottom-color: rgba(200, 169, 110, 0.2);
   }
   .ab-team-header {
     display: flex;

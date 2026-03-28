@@ -54,6 +54,10 @@ const css = `
     overflow-x: hidden;
   }
 
+  [data-theme="dark"] .bl-wrap {
+    background: #0f0c08;
+  }
+
   /* ════════════════════════════
      HERO
   ════════════════════════════ */
@@ -382,7 +386,17 @@ const css = `
     transform: translateY(20px);
     animation: blCardIn 0.55s ease forwards;
   }
+
+  [data-theme="dark"] .bl-card {
+    background: #1a1410;
+    border-color: rgba(200, 169, 110, 0.2);
+  }
+
   .bl-card:hover { box-shadow: 0 12px 40px rgba(26,20,16,0.09); }
+
+  [data-theme="dark"] .bl-card:hover {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  }
 
   @keyframes blCardIn {
     to { opacity: 1; transform: translateY(0); }

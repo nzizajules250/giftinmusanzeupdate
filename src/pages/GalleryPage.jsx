@@ -44,6 +44,10 @@ const css = `
     padding-top: 100px;
   }
 
+  [data-theme="dark"] .gp-wrap {
+    background: #0f0c08;
+  }
+
   /* ── Hero header ── */
   .gp-hero {
     position: relative;

@@ -7,7 +7,7 @@ const css = `
     width: 100%;
     background: #0f0c08;
     color: #faf8f3;
-    padding: 10px 16px;
+    padding: 12px 16px;
     font-size: 12px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -15,19 +15,41 @@ const css = `
     gap: 12px;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    z-index: 1000;
   }
   .gi-announce strong {
     color: #c8a96e;
     font-weight: 600;
   }
   .gi-announce-close {
-    background: transparent;
-    border: 1px solid rgba(200, 169, 110, 0.35);
-    color: #faf8f3;
-    width: 26px;
-    height: 26px;
+    background: #c8a96e;
+    border: none;
+    color: #0f0c08;
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    min-height: 32px;
     cursor: pointer;
-    font-size: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 3px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+    padding: 0;
+    line-height: 1;
+    z-index: 1001;
+    position: relative;
+  }
+  .gi-announce-close:hover {
+    background: #d9be8a;
+    transform: scale(1.1);
+  }
+  .gi-announce-close:active {
+    transform: scale(0.95);
   }
 `
 
