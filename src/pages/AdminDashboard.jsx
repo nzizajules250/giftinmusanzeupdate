@@ -1163,6 +1163,7 @@ function AdminDashboard() {
                       <thead>
                         <tr>
                           <th>Guest</th>
+                          <th>Phone</th>
                           <th>Room</th>
                           <th>Check-in</th>
                           <th>Check-out</th>
@@ -1174,6 +1175,7 @@ function AdminDashboard() {
                         {bookings.map((b, idx) => (
                           <tr key={b.id} style={{ animationDelay: `${idx * 0.04}s` }}>
                             <td>{b.fullName || '—'}</td>
+                            <td>{b.phone || '—'}</td>
                             <td>{b.roomName || b.roomType || '—'}</td>
                             <td>{b.checkIn  || '—'}</td>
                             <td>{b.checkOut || '—'}</td>
