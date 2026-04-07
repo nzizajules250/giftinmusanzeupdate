@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { hotelInfo } from '../data/siteContent.js'
 
@@ -309,6 +310,19 @@ const socials = [
 
 /* ── Footer Component ─────────────────────────────────────────────────────── */
 function Footer() {
+  const [showAdminDashboard, setShowAdminDashboard] = useState(false)
+
+  useEffect(() => {
+    const updateFlag = () => {
+      setShowAdminDashboard(
+        typeof window !== 'undefined' && window.localStorage.getItem('giftinn-admin-session') === 'true'
+      )
+    }
+    updateFlag()
+    window.addEventListener('storage', updateFlag)
+    return () => window.removeEventListener('storage', updateFlag)
+  }, [])
+
   return (
     <footer className="gi-footer">
       <style>{css}</style>
@@ -445,6 +459,11 @@ function Footer() {
           <a href="/privacy">Privacy Policy</a>
           <a href="/terms">Terms of Use</a>
           <a href="/cookies">Cookie Policy</a>
+          {showAdminDashboard && (
+            <Link to="/admin" className="gi-footer-admin-link" aria-label="Return to admin dashboard">
+              Admin Dashboard
+            </Link>
+          )}
         </div>
       </div>
     </footer>

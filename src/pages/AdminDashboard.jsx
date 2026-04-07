@@ -936,6 +936,15 @@ function AdminDashboard() {
     return () => unsubs.forEach((u) => u())
   }, [user])
 
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    if (user) {
+      window.localStorage.setItem('giftinn-admin-session', 'true')
+    } else {
+      window.localStorage.removeItem('giftinn-admin-session')
+    }
+  }, [user])
+
   const navigateSection = (id) => {
     setActiveNav(id)
     window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -1077,6 +1086,9 @@ function AdminDashboard() {
               <p className="ad-topbar-title" id="ad-overview">GiftInn <em>Dashboard</em></p>
               <p className="ad-topbar-sub">Manage bookings, notifications, announcements and live chat</p>
             </div>
+            <button type="button" className="ad-submit" style={{ marginLeft: 'auto' }} onClick={() => navigate('/') }>
+              Open Website
+            </button>
           </div>
         </div>
 
