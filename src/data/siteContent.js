@@ -3,7 +3,7 @@ export const hotelInfo = {
   city: 'Musanze',
   country: 'Rwanda',
   phone: '+250788608388',
-  email: 'info@giftinnmusanze.com',
+  email: 'martius02@yahoo.fr',
   whatsapp: '250788608388',
   address: 'NM 28 St, Near Musanze City Center, Musanze, Rwanda',
   coordinates: '-1.4992,29.6350',
