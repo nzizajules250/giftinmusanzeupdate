@@ -4,13 +4,14 @@ import { getAuth } from 'firebase/auth'
 import { getFirestore } from 'firebase/firestore'
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyBMzm3TnCZXzwC4k3taPlTYXaRgD8rKDEg',
-  authDomain: 'giftinnadmin.firebaseapp.com',
-  projectId: 'giftinnadmin',
-  storageBucket: 'giftinnadmin.firebasestorage.app',
-  messagingSenderId: '398384529883',
-  appId: '1:398384529883:web:dcc56af5d8a18034e5e7fe',
-  measurementId: 'G-ZVFJKWV3EG',
+  apiKey: "AIzaSyC81v5TSrC0_wE0jsLW_kFLZs7BMdP5ceQ",
+  authDomain: "auction-origin.firebaseapp.com",
+  databaseURL: "https://auction-origin-default-rtdb.firebaseio.com",
+  projectId: "auction-origin",
+  storageBucket: "auction-origin.firebasestorage.app",
+  messagingSenderId: "881371645224",
+  appId: "1:881371645224:web:8391dc9d4e1b431ca8fc1d",
+  measurementId: "G-R5GXNHTKFX"
 }
 
 const app = initializeApp(firebaseConfig)
