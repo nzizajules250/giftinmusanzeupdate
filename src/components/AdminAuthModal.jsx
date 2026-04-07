@@ -151,6 +151,7 @@ function AdminAuthModal({ open, onClose }) {
     () => parseAllowList(import.meta.env.VITE_ADMIN_EMAILS),
     [],
   )
+  const allowRegistration = import.meta.env.VITE_ADMIN_ENABLE_REGISTRATION === 'true'
 
   useEffect(() => {
     if (!open) return
@@ -189,6 +190,11 @@ function AdminAuthModal({ open, onClose }) {
       return
     }
 
+    if (mode === 'register' && !allowRegistration) {
+      setError('Admin registration is currently disabled.')
+      return
+    }
+
     if (mode === 'register' && password !== confirm) {
       setError('Passwords do not match.')
       return
@@ -221,22 +227,28 @@ function AdminAuthModal({ open, onClose }) {
         <div className="gi-admin-title">
           {mode === 'login' ? 'Admin Sign In' : 'Admin Register'}
         </div>
-        <div className="gi-admin-tabs">
-          <button
-            type="button"
-            className={`gi-admin-tab${mode === 'login' ? ' active' : ''}`}
-            onClick={() => setMode('login')}
-          >
-            Login
-          </button>
-          <button
-            type="button"
-            className={`gi-admin-tab${mode === 'register' ? ' active' : ''}`}
-            onClick={() => setMode('register')}
-          >
-            Register
-          </button>
-        </div>
+        {allowRegistration ? (
+          <div className="gi-admin-tabs">
+            <button
+              type="button"
+              className={`gi-admin-tab${mode === 'login' ? ' active' : ''}`}
+              onClick={() => setMode('login')}
+            >
+              Login
+            </button>
+            <button
+              type="button"
+              className={`gi-admin-tab${mode === 'register' ? ' active' : ''}`}
+              onClick={() => setMode('register')}
+            >
+              Register
+            </button>
+          </div>
+        ) : (
+          <div style={{ marginBottom: 18, color: 'rgba(250,248,243,0.55)', fontSize: 12 }}>
+            Admin registration is disabled. Please sign in with existing credentials.
+          </div>
+        )}
         <form className="gi-admin-form" onSubmit={submit}>
           <label className="gi-admin-label" htmlFor="gi-admin-email">Email</label>
           <input

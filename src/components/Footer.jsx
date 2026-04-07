@@ -237,19 +237,31 @@ const css = `
     gap: 20px;
     flex-wrap: wrap;
   }
-  .gi-footer-legal a {
+  .gi-footer-legal a,
+  .gi-footer-admin-link {
     font-size: 11px;
     font-weight: 300;
     color: rgba(250,248,243,0.25);
     text-decoration: none;
     letter-spacing: 0.04em;
-    transition: color 0.3s;
+    transition: color 0.3s, opacity 0.3s;
   }
-  .gi-footer-legal a:hover { color: var(--gold); }
   .gi-footer-admin-link {
-    opacity: 0.6;
-    font-size: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    margin-top: 8px;
+    border-radius: 999px;
+    background: rgba(200,169,110,0.16);
+    border: 1px solid rgba(200,169,110,0.35);
+    color: var(--gold);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    opacity: 1;
   }
+  .gi-footer-legal a:hover,
   .gi-footer-admin-link:hover {
     opacity: 1;
     color: var(--gold) !important;
@@ -385,6 +397,9 @@ function Footer() {
               <span className="gi-footer-contact-dot" />
               {hotelInfo.address}
             </span>
+            <Link to="/admin-login" className="gi-footer-admin-link" title="Staff login for GiftInn management">
+              Staff login
+            </Link>
           </div>
         </div>
 
@@ -430,7 +445,6 @@ function Footer() {
           <a href="/privacy">Privacy Policy</a>
           <a href="/terms">Terms of Use</a>
           <a href="/cookies">Cookie Policy</a>
-          <Link to="/admin-login" className="gi-footer-admin-link">Admin</Link>
         </div>
       </div>
     </footer>

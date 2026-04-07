@@ -59,6 +59,22 @@ const css = `
     --muted:     #8a8175;
   }
 
+  [data-theme="light"] .ad-brand-sub,
+  [data-theme="light"] .ad-user-name,
+  [data-theme="light"] .ad-nav-label,
+  [data-theme="light"] .ad-nav-btn,
+  [data-theme="light"] .ad-overview-card-label,
+  [data-theme="light"] .ad-topbar-sub,
+  [data-theme="light"] .ad-label,
+  [data-theme="light"] .ad-row-meta,
+  [data-theme="light"] .ad-empty {
+    color: rgba(26,20,16,0.85);
+  }
+
+  [data-theme="light"] .ad-nav-btn:hover {
+    color: rgba(26,20,16,0.95);
+  }
+
   .ad-wrap * { box-sizing: border-box; margin: 0; padding: 0; }
   .ad-wrap {
     font-family: var(--sans);
