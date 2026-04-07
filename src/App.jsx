@@ -2,6 +2,7 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import Layout from './components/Layout.jsx'
 import AboutPage from './pages/AboutPage.jsx'
 import AdminDashboard from './pages/AdminDashboard.jsx'
+import AdminLoginPage from './pages/AdminLoginPage.jsx'
 import AmenitiesPage from './pages/AmenitiesPage.jsx'
 import BlogPage from './pages/BlogPage.jsx'
 import BookingPage from './pages/BookingPage.jsx'
@@ -28,6 +29,7 @@ function App() {
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/admin" element={<AdminDashboard />} />
       </Route>
+      <Route path="/admin-login" element={<AdminLoginPage />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   )

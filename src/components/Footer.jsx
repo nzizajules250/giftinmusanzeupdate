@@ -246,6 +246,14 @@ const css = `
     transition: color 0.3s;
   }
   .gi-footer-legal a:hover { color: var(--gold); }
+  .gi-footer-admin-link {
+    opacity: 0.6;
+    font-size: 10px;
+  }
+  .gi-footer-admin-link:hover {
+    opacity: 1;
+    color: var(--gold) !important;
+  }
 
   /* ── Decorative gold rule ── */
   .gi-footer-rule {
@@ -422,6 +430,7 @@ function Footer() {
           <a href="/privacy">Privacy Policy</a>
           <a href="/terms">Terms of Use</a>
           <a href="/cookies">Cookie Policy</a>
+          <Link to="/admin-login" className="gi-footer-admin-link">Admin</Link>
         </div>
       </div>
     </footer>

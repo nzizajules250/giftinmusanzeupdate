@@ -171,8 +171,8 @@ function AdminAuthModal({ open, onClose }) {
   if (!open) return null
 
   const isAllowed = (value) => {
-    // Temporarily allow all emails for testing
-    return true
+    if (!allowList.length) return true
+    return allowList.includes(value.toLowerCase())
   }
 
   const submit = async (event) => {

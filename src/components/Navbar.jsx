@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom'
 import { navItems } from '../data/siteContent.js'
 import { useLanguage } from '../context/LanguageContext.jsx'
 import { useTheme } from '../context/ThemeContext.jsx'
-import AdminAuthModal from './AdminAuthModal.jsx'
 import { usePanel } from '../context/PanelContext.jsx'
 
 const css = `
@@ -352,11 +351,9 @@ const css = `
 function Navbar() {
   const [open, setOpen]           = useState(false)
   const [scrolled, setScrolled]   = useState(false)
-  const [adminOpen, setAdminOpen] = useState(false)
   const { language, setLanguage } = useLanguage()
   const { theme, toggleTheme }    = useTheme()
   const { setOpenPanel, setPanelTab } = usePanel()
-  const lastTapRef                = useRef(0)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 18)
@@ -372,24 +369,6 @@ function Navbar() {
 
   const navClass       = ({ isActive }) => `gi-link${isActive ? ' active' : ''}`
   const mobileNavClass = ({ isActive }) => `gi-mobile-link${isActive ? ' active' : ''}`
-  const openAdmin      = () => setAdminOpen(true)
-
-  const handleLogoDoubleClick = (event) => {
-    event.preventDefault()
-    event.stopPropagation()
-    openAdmin()
-  }
-
-  const handleLogoTouch = (event) => {
-    const now = Date.now()
-    const delta = now - lastTapRef.current
-    if (delta > 0 && delta < 350) {
-      event.preventDefault()
-      event.stopPropagation()
-      openAdmin()
-    }
-    lastTapRef.current = now
-  }
 
   return (
     <header className="gi-header">
@@ -401,9 +380,7 @@ function Navbar() {
         <NavLink
           to="/"
           className="gi-logo"
-          onDoubleClick={handleLogoDoubleClick}
-          onTouchStart={handleLogoTouch}
-          aria-label="GiftInn Home (double tap for admin)"
+          aria-label="GiftInn Home"
         >
           Gift<span>Inn</span>
         </NavLink>
@@ -585,8 +562,6 @@ function Navbar() {
           </NavLink>
         </div>
       </div>
-
-      <AdminAuthModal open={adminOpen} onClose={() => setAdminOpen(false)} />
     </header>
   )
 }
