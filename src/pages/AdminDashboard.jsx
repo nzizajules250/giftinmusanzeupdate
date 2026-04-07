@@ -48,6 +48,17 @@ const css = `
     --sans:      'Jost', sans-serif;
   }
 
+  /* Light mode overrides */
+  [data-theme="light"] {
+    --dark:      #ffffff;
+    --dark2:     #f8f6f3;
+    --dark3:     #f0ede8;
+    --dark4:     #e8e3dc;
+    --ivory:     #1a1410;
+    --sand:      #2b241d;
+    --muted:     #8a8175;
+  }
+
   .ad-wrap * { box-sizing: border-box; margin: 0; padding: 0; }
   .ad-wrap {
     font-family: var(--sans);
@@ -248,6 +259,10 @@ const css = `
     transition: color 0.3s, border-color 0.3s;
     width: 100%;
   }
+  [data-theme="light"] .ad-footer-btn {
+    color: rgba(26,20,16,0.6);
+    border: 1px solid rgba(200,169,110,0.3);
+  }
   .ad-footer-btn:hover { color: var(--gold); border-color: var(--gold); }
   .ad-footer-btn.danger:hover { color: #c97b84; border-color: #c97b84; }
 
@@ -284,6 +299,10 @@ const css = `
     top: 0;
     z-index: 150;
   }
+  [data-theme="light"] .ad-topbar {
+    background: linear-gradient(180deg, rgba(248,246,243,0.95) 0%, rgba(240,237,232,0.9) 100%);
+    border-bottom: 1px solid rgba(200,169,110,0.2);
+  }
   .ad-topbar-title {
     font-family: var(--serif);
     font-size: 28px;
@@ -302,6 +321,9 @@ const css = `
     color: rgba(250,248,243,0.45);
     margin-top: 6px;
     letter-spacing: 0.05em;
+  }
+  [data-theme="light"] .ad-topbar-sub {
+    color: rgba(26,20,16,0.6);
   }
 
   /* Stats strip */
@@ -328,6 +350,12 @@ const css = `
     box-shadow: 0 16px 50px rgba(0,0,0,0.35);
     padding: 28px;
     border-radius: 2px;
+  }
+  [data-theme="light"] .ad-section-block {
+    background: radial-gradient(circle at 20% 20%, rgba(200,169,110,0.06), transparent 35%),
+                linear-gradient(180deg, rgba(248,246,243,0.95), rgba(240,237,232,0.9));
+    border: 1px solid rgba(200,169,110,0.15);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
   }
 
   .ad-overview-grid {
@@ -446,10 +474,18 @@ const css = `
     border-radius: 2px;
     transition: all 0.3s ease;
   }
+  [data-theme="light"] .ad-card {
+    background: linear-gradient(135deg, rgba(248,246,243,0.9), rgba(240,237,232,0.95));
+    border: 1px solid rgba(200,169,110,0.15);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  }
 
   .ad-card:hover {
     border-color: rgba(200,169,110,0.2);
     box-shadow: 0 16px 50px rgba(0,0,0,0.4);
+  }
+  [data-theme="light"] .ad-card:hover {
+    box-shadow: 0 12px 35px rgba(0,0,0,0.12);
   }
 
   /* Form elements */
@@ -477,13 +513,32 @@ const css = `
     appearance: none;
     border-radius: 1px;
   }
+  [data-theme="light"] .ad-input,
+  [data-theme="light"] .ad-select,
+  [data-theme="light"] .ad-textarea {
+    color: var(--dark);
+    background: rgba(248,246,243,0.8);
+    border: 1px solid rgba(200,169,110,0.2);
+  }
+
   .ad-input::placeholder, .ad-textarea::placeholder { 
     color: rgba(250,248,243,0.25); 
   }
+  [data-theme="light"] .ad-input::placeholder,
+  [data-theme="light"] .ad-textarea::placeholder { 
+    color: rgba(26,20,16,0.4); 
+  }
+
   .ad-input:focus, .ad-select:focus, .ad-textarea:focus { 
     border-color: var(--gold);
     background: rgba(26,20,16,0.9);
     box-shadow: 0 0 0 3px rgba(200,169,110,0.08);
+  }
+  [data-theme="light"] .ad-input:focus,
+  [data-theme="light"] .ad-select:focus,
+  [data-theme="light"] .ad-textarea:focus { 
+    background: rgba(248,246,243,0.95);
+    box-shadow: 0 0 0 3px rgba(200,169,110,0.12);
   }
   .ad-textarea { 
     min-height: 100px; 
@@ -578,9 +633,16 @@ const css = `
     background: rgba(26,20,16,0.5);
     transition: background 0.2s ease;
   }
+  [data-theme="light"] .ad-row {
+    background: rgba(248,246,243,0.7);
+    border-bottom: 1px solid rgba(200,169,110,0.12);
+  }
 
   .ad-row:hover {
     background: rgba(26,20,16,0.8);
+  }
+  [data-theme="light"] .ad-row:hover {
+    background: rgba(248,246,243,0.9);
   }
 
   @keyframes adRowIn {
@@ -634,10 +696,18 @@ const css = `
     transition: all 0.3s;
     border-radius: 1px;
   }
+  [data-theme="light"] .ad-del-btn {
+    background: rgba(201,123,132,0.06);
+    border: 1px solid rgba(201,123,132,0.3);
+    color: rgba(201,123,132,0.8);
+  }
   .ad-del-btn:hover {
     border-color: #c97b84;
     color: #c97b84;
     background: rgba(201,123,132,0.15);
+  }
+  [data-theme="light"] .ad-del-btn:hover {
+    background: rgba(201,123,132,0.12);
   }
 
   /* Empty state */
@@ -649,6 +719,9 @@ const css = `
     color: rgba(250,248,243,0.35);
     letter-spacing: 0.06em;
     font-style: italic;
+  }
+  [data-theme="light"] .ad-empty {
+    color: rgba(26,20,16,0.4);
   }
 
   /* ── Bookings table ── */
@@ -676,6 +749,12 @@ const css = `
     white-space: nowrap;
     background: rgba(26,20,16,0.8);
   }
+  [data-theme="light"] .ad-table th {
+    color: rgba(26,20,16,0.7);
+    background: rgba(248,246,243,0.9);
+    border-bottom: 1px solid rgba(200,169,110,0.15);
+  }
+
   .ad-table td {
     padding: 14px 16px;
     border-bottom: 1px solid rgba(200,169,110,0.06);
@@ -684,9 +763,16 @@ const css = `
     font-weight: 300;
     white-space: nowrap;
   }
+  [data-theme="light"] .ad-table td {
+    color: rgba(26,20,16,0.8);
+    border-bottom: 1px solid rgba(200,169,110,0.1);
+  }
+
   .ad-table tr:last-child td { border-bottom: none; }
   .ad-table tr:hover td { background: rgba(200,169,110,0.04); }
+  [data-theme="light"] .ad-table tr:hover td { background: rgba(200,169,110,0.06); }
   .ad-table td:first-child { color: var(--ivory); font-weight: 400; }
+  [data-theme="light"] .ad-table td:first-child { color: var(--dark); }
 
   /* Status select */
   .ad-status-select {
@@ -708,8 +794,14 @@ const css = `
     transition: border-color 0.3s;
     border-radius: 0;
   }
+  [data-theme="light"] .ad-status-select {
+    background: rgba(248,246,243,0.8);
+    border: 1px solid rgba(200,169,110,0.3);
+    color: var(--dark);
+  }
   .ad-status-select:focus { border-color: var(--gold); }
   .ad-status-select option { background: var(--dark2); }
+  [data-theme="light"] .ad-status-select option { background: rgba(248,246,243,0.95); color: var(--dark); }
   .ad-status-select[value="confirmed"] { color: #4caf7d; border-color: rgba(76,175,125,0.35); }
   .ad-status-select[value="cancelled"] { color: #c97b84; border-color: rgba(201,123,132,0.35); }
 
